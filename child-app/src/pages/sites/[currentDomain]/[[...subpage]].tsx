@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 
+//@ts-ignore
 const Header = dynamic(() => import("master/Header"), {
   ssr: false,
   loading: () => <>Laster..</>,
