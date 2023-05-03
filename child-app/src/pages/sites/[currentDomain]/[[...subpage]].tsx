@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 
 //@ts-ignore
-const Header = dynamic(() => import("master/Header"), {
-  ssr: false,
-  loading: () => <>Laster..</>,
-});
+// const Header = dynamic(() => import("master/Header"), {
+//   ssr: false,
+//   loading: () => <>Laster..</>,
+// });
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: [],
@@ -29,7 +29,6 @@ const LogParams = (props: any) => {
 
   return (
     <div>
-      <Header />
       <h1>Page in child app</h1>
       <h2>Router</h2>
       <pre>{JSON.stringify(router.query, null, 2)}</pre>
