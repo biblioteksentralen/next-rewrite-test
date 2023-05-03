@@ -1,0 +1,34 @@
+import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
+
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [],
+  fallback: "blocking",
+});
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const params = ctx.params;
+
+  return {
+    props: { params },
+    revalidate: 15,
+  };
+};
+
+const LogParams = (props: any) => {
+  const router = useRouter();
+
+  console.log("router.query", router.query);
+
+  return (
+    <div>
+      <h1>Subpage in main app</h1>
+      <h2>Router</h2>
+      <pre>{JSON.stringify(router.query, null, 2)}</pre>
+      <h2>Props</h2>
+      <pre>{JSON.stringify(props, null, 2)}</pre>
+    </div>
+  );
+};
+
+export default LogParams;
