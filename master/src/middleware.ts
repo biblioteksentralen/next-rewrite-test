@@ -2,6 +2,17 @@ import { NextRequest, NextResponse } from "next/server";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
+export const config = {
+  matcher: [
+    "/((?!_next).*)",
+    /**
+     * Was not able to write the above regex while catching the root path "/",
+     * so we do this in a separate matcher
+     */
+    "/",
+  ],
+};
+
 export default async function middleware(req: NextRequest) {
   const { pathname, locale: originalLocale } = req.nextUrl;
 
