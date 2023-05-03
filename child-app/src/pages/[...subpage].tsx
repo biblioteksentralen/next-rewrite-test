@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 const LogParams = (props: any) => {
   const router = useRouter();
 
-  console.log("router.query", router.query);
+  console.log({ router, props });
 
   return (
     <div>
