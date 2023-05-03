@@ -1,7 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 
-export const getStaticPaths: GetStaticPaths = async () => ({ paths: [], fallback: "blocking" });
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [],
+  fallback: "blocking",
+});
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const params = ctx.params;
@@ -12,10 +15,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   };
 };
 
-const LogParams = (props) => {
+const LogParams = (props:any) => {
   const router = useRouter();
 
-  console.log({router, props});
+  console.log({ router, props });
 
   return (
     <div>
