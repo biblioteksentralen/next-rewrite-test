@@ -28,6 +28,13 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.rewrite(url, { request: { headers: newHeaders } });
   }
 
+  if (pathname.startsWith("/child3")) {
+    const url = isDevelopment
+      ? `http://localhost:3003${pathname}`
+      : `https://next-rewrite-test-child-3.vercel.app${pathname}`;
+    return NextResponse.rewrite(url, { request: { headers: newHeaders } });
+  }
+
   const url = req.nextUrl.clone();
   url.pathname = `/sites/${currentDomain}${pathname}`;
   console.log(

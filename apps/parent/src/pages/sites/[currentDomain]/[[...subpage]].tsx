@@ -28,6 +28,11 @@ const LogParams = (props: any) => {
         <a href="/child2">
           Visit child app 2, different folder structure, works fine
         </a>
+      </div>      
+      <div>
+        <a href="/child2">
+          Visit child app 3, app router
+        </a>
       </div>
       <h2>Query from router</h2>
       <pre>{JSON.stringify(router.query, null, 2)}</pre>
