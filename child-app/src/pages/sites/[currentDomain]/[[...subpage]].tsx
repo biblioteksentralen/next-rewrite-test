@@ -15,17 +15,16 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   };
 };
 
+
 const LogParams = (props: any) => {
   const router = useRouter();
-
-  console.log("router.query", router.query);
 
   return (
     <div>
       <h1>Page in child app</h1>
-      <h2>Router</h2>
+      <h2>Query from router</h2>
       <pre>{JSON.stringify(router.query, null, 2)}</pre>
-      <h2>Props</h2>
+      <h2>Params from getStaticProps</h2>
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </div>
   );
