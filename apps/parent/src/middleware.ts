@@ -3,14 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 export const config = {
-  matcher: [
-    "/((?!_next).*)",
-    /**
-     * Was not able to write the above regex while catching the root path "/",
-     * so we do this in a separate matcher
-     */
-    "/",
-  ],
+  matcher: ["/((?!_next).*)", "/"],
 };
 
 export default async function middleware(req: NextRequest) {
@@ -21,16 +14,18 @@ export default async function middleware(req: NextRequest) {
   if (pathname.startsWith("/child")) {
     const url = isDevelopment
       ? `http://localhost:3001${pathname}`
-      : `https://next-rewrite-test-child.bibliotek.io${pathname}`;
+      : `https://next-rewrite-test-child.vercel.app${pathname}`;
     const headers = new Headers(req.headers);
     headers.set("current-domain", currentDomain);
     console.log(`👤 Domain: ${currentDomain} 🚚 Rewrite: ${req.url} → ${url}`);
     return NextResponse.rewrite(url, { request: { headers } });
   }
-  
+
   const url = req.nextUrl.clone();
   url.pathname = `/sites/${currentDomain}${pathname}`;
-  console.log(`🏛 Domain: ${currentDomain} 🚚 Rewrite: ${req.url} → ${url.toString()}`);
+  console.log(
+    `🏛 Domain: ${currentDomain} 🚚 Rewrite: ${req.url} → ${url.toString()}`
+  );
   return NextResponse.rewrite(url);
 }
 

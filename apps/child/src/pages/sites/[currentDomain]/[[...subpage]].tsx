@@ -15,7 +15,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   };
 };
 
-
 const LogParams = (props: any) => {
   const router = useRouter();
 
@@ -26,6 +25,8 @@ const LogParams = (props: any) => {
       <pre>{JSON.stringify(router.query, null, 2)}</pre>
       <h2>Params from getStaticProps</h2>
       <pre>{JSON.stringify(props, null, 2)}</pre>
+      <h2>Im really hosted on</h2>
+      <p>{process.env.NEXT_PUBLIC_VERCEL_URL}</p>
     </div>
   );
 };
