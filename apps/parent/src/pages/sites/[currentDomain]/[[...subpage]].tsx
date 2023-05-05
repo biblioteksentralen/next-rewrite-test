@@ -30,7 +30,7 @@ const LogParams = (props: any) => {
         </a>
       </div>      
       <div>
-        <a href="/child2">
+        <a href="/child3">
           Visit child app 3, app router
         </a>
       </div>
