@@ -9,7 +9,7 @@ export const config = {
 export default async function middleware(req: NextRequest) {
   const { pathname, locale: originalLocale } = req.nextUrl;
 
-  const currentDomain = req.headers.get("host") || ""; // ":" for localhost
+  const currentDomain = req.headers.get("host") || "";
 
   const newHeaders = new Headers(req.headers);
   newHeaders.set("current-domain", currentDomain);
