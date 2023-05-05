@@ -20,15 +20,7 @@ const LogParams = (props: any) => {
 
   return (
     <div>
-      <h1>Page in parent app</h1>
-      <div>
-        <a href="/child1">Visit child app 1, here are problems</a>
-      </div>
-      <div>
-        <a href="/child2">
-          Visit child app 2, different folder structure, works fine
-        </a>
-      </div>
+      <h1>Page in child 2 app</h1>
       <h2>Query from router</h2>
       <pre>{JSON.stringify(router.query, null, 2)}</pre>
       <h2>Params from getStaticProps</h2>
