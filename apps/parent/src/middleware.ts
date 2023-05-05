@@ -17,14 +17,14 @@ export default async function middleware(req: NextRequest) {
   if (pathname.startsWith("/child1")) {
     const url = isDevelopment
       ? `http://localhost:3001${pathname}`
-      : `https://next-rewrite-test-child1.vercel.app${pathname}`;
+      : `https://next-rewrite-test-child-1.vercel.app${pathname}`;
     return NextResponse.rewrite(url, { request: { headers: newHeaders } });
   }
 
   if (pathname.startsWith("/child2")) {
     const url = isDevelopment
       ? `http://localhost:3002${pathname}`
-      : `https://next-rewrite-test-child2.vercel.app${pathname}`;
+      : `https://next-rewrite-test-child-2.vercel.app${pathname}`;
     return NextResponse.rewrite(url, { request: { headers: newHeaders } });
   }
 
