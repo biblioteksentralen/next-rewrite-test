@@ -37,6 +37,11 @@ Child app 1: `src/pages/sites/[currentDomain]/[[...supbpages]].tsx` Here be trou
 Child app 2: `src/pages/[[...supbpages]].tsx` This seems to work
 
 When navigating to `https://next-rewrite-test-parent.vercel.app/child1` the url is redirected to `https://next-rewrite-test-parent.vercel.app/child1?currentDomain=next-rewrite-test-parent.vercel.app` after a short while.
+
+Also get this error in the console:
+```
+Uncaught (in promise) Error: Invariant: attempted to hard navigate to the same URL /child1?currentDomain=next-rewrite-test-parent.vercel.app
+```
  
 ## To reproduce
 
