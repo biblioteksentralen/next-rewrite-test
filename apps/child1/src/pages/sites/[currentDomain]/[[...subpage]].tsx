@@ -20,7 +20,7 @@ const LogParams = (props: any) => {
 
   return (
     <div>
-      <h1>Page in child app</h1>
+      <h1>Page in child app 1</h1>
       <h2>Query from router</h2>
       <pre>{JSON.stringify(router.query, null, 2)}</pre>
       <h2>Params from getStaticProps</h2>
