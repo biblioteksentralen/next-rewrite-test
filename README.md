@@ -65,7 +65,7 @@ This seems to work in development, but there is one strange bug that shows up wh
   
   `src/app/sites/[currentDomain]/[[...supbpage]]/page.tsx`
 
-  Deployed at: https://next-rewrite-test-child-2.vercel.app/child3
+  Deployed at: https://next-rewrite-test-child-3.vercel.app/child3
   
   Visit through parent rewrite: https://next-rewrite-test-parent.vercel.app/child3
   
