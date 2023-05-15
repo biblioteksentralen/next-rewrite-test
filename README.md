@@ -84,3 +84,16 @@ npm i
 npm run build
 npm run start
 ```
+
+### Update 15.05.2023
+Got answer from Vercel customer support: 
+
+Turned on 
+```
+  // next.config.js
+  experimental: {
+    externalMiddlewareRewritesResolve: true
+  }
+```
+
+Things now seem to work! 🎉
